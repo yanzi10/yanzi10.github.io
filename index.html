@@ -1,194 +1,312 @@
 <!DOCTYPE html>
+
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yanzi Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Thêm thư viện hiệu ứng cuộn AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <style>
-        :root {
-            --primary-color: #6c5ce7;
-            --secondary-color: #a29bfe;
-            --dark-color: #2d3436;
-            --light-color: #dfe6e9;
-            --gradient: linear-gradient(135deg, #6c5ce7, #a29bfe);
-        }
+```
+<title>Nguyễn Văn Duy | Software Developer</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+<meta name="description"
+    content="Portfolio của Nguyễn Văn Duy - Software Developer & Computer Science Student">
 
-        html {
-            scroll-behavior: smooth;
-        }
+<link rel="stylesheet" href="css/style.css">
 
-        body {
-            background-color: #f9f9f9;
-            color: var(--dark-color);
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 80px 20px;
-        }
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+```
 
-        .container {
-            max-width: 1100px;
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-        }
-
-        .content h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
-
-        .content h1 span {
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .content p {
-            font-size: 1.1rem;
-            color: #636e72;
-            margin-bottom: 35px;
-            line-height: 1.7;
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .btn-group {
-                justify-content: center;
-            }
-        }
-
-        /* 1. SỬA BUTTON ANIMATION MƯỢT MÀ HƠN */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 14px 30px;
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 50px;
-            /* Thay đổi transition dùng cubic-bezier giúp nút nảy (bounce) nhẹ nhàng cực mượt */
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background: var(--gradient);
-            color: #fff;
-            box-shadow: 0 10px 20px rgba(108, 92, 231, 0.2);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-4px); /* Nhấc nhẹ nút lên */
-            box-shadow: 0 15px 25px rgba(108, 92, 231, 0.4);
-        }
-
-        .btn-secondary {
-            background: #fff;
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary-color);
-            color: #fff;
-            transform: translateY(-4px);
-            box-shadow: 0 15px 25px rgba(108, 92, 231, 0.15);
-        }
-
-        .image-wrapper {
-            display: flex;
-            justify-content: center;
-        }
-
-        /* 2. SỬA ẢNH THÀNH CHUYỂN ĐỘNG LƠ LỬNG & BIẾN ĐỔI (BLOB) */
-        .profile-img {
-            width: 320px;
-            height: 320px;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            
-            /* Thêm animation: float (lơ lửng) và morph (co giãn góc bo) chạy song song */
-            animation: float 4s ease-in-out infinite, morph 8s ease-in-out infinite;
-        }
-
-        /* Hiệu ứng lơ lửng lên xuống */
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-12px); }
-        }
-
-        /* Hiệu ứng chuyển động hình dáng mềm mại xung quanh viền ảnh */
-        @keyframes morph {
-            0%, 100% { border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%; }
-            50% { border-radius: 70% 30% 52% 48% / 60% 40% 60% 40%; }
-        }
-    </style>
 </head>
+
 <body>
 
-    <section class="hero">
-        <div class="container">
-            
-            <!-- 3. THÊM HIỆU ỨNG CUỘN (AOS) CHO NỘI DUNG CHỮ -->
-            <div class="content" data-aos="fade-right" data-aos-duration="1000">
-                <h1>Xin chào, Tôi là <br><span>Yanzi</span></h1>
-                <p>Tôi là một nhà phát triển phần mềm đam mê tạo ra các trải nghiệm giao diện người dùng mượt mà và tối ưu.</p>
-                <div class="btn-group">
-                    <a href="#" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Liên Hệ</a>
-                    <a href="#" class="btn btn-secondary"><i class="fa-solid fa-briefcase"></i> Dự Án</a>
-                </div>
-            </div>
+```
+<div id="particles"></div>
 
-            <!-- 3. THÊM HIỆU ỨNG CUỘN (AOS) CHO KHỐI ẢNH -->
-            <div class="image-wrapper" data-aos="fade-left" data-aos-duration="1000">
-                <img src="assets/profile.jpg" alt="Yanzi Profile" class="profile-img">
-            </div>
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            Nguyễn Văn Duy
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#about">Giới thiệu</a></li>
+            <li><a href="#skills">Kỹ năng</a></li>
+            <li><a href="#projects">Dự án</a></li>
+            <li><a href="#education">Học vấn</a></li>
+            <li><a href="#contact">Liên hệ</a></li>
+        </ul>
+
+    </nav>
+
+</header>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-tag">
+            Available for Internship
+        </span>
+
+        <h1>
+            Nguyễn Văn Duy
+        </h1>
+
+        <h2 id="typing-text">
+            Software Developer
+        </h2>
+
+        <p>
+            Sinh viên ngành Computer Science tại Troy University.
+            Đam mê phát triển phần mềm, Android Development,
+            Database Systems và Networking Solutions.
+        </p>
+
+        <div class="hero-badges">
+            <span>Java</span>
+            <span>C#</span>
+            <span>Android</span>
+            <span>MySQL</span>
+            <span>Networking</span>
+        </div>
+
+        <div class="hero-buttons">
+
+            <a href="#projects" class="btn-primary">
+                Xem dự án
+            </a>
+
+            <a href="#contact" class="btn-secondary">
+                Liên hệ
+            </a>
 
         </div>
-    </section>
 
-    <!-- Thư viện JS của AOS để kích hoạt hiệu ứng cuộn -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // Khởi tạo AOS
-        AOS.init({
-            once: false // Đặt thành false để khi cuộn lên cuộn xuống hiệu ứng đều hoạt động mượt mà
-        });
-    </script>
+    </div>
+
+    <div class="hero-image">
+
+        <div class="profile-card">
+
+            <img src="assets/profile.jpg" alt="Nguyen Van Duy">
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="stats">
+
+    <div class="stat-card">
+        <h3 class="counter" data-target="36">3.6</h3>
+        <p>GPA x10</p>
+    </div>
+
+    <div class="stat-card">
+        <h3 class="counter" data-target="4">4+</h3>
+        <p>Dự án nổi bật</p>
+    </div>
+
+    <div class="stat-card">
+        <h3 class="counter" data-target="10">10+</h3>
+        <p>Công nghệ</p>
+    </div>
+
+</section>
+
+<section id="about">
+
+    <h2>Giới thiệu</h2>
+
+    <div class="glass-card">
+
+        <p>
+            Tôi là Nguyễn Văn Duy, sinh viên ngành Computer Science tại Troy University.
+
+            Tôi yêu thích xây dựng các hệ thống phần mềm thực tế,
+            phát triển ứng dụng Android, thiết kế cơ sở dữ liệu
+            và triển khai các giải pháp mạng hiện đại.
+
+            Mục tiêu của tôi là trở thành Software Developer chuyên nghiệp,
+            tham gia phát triển các sản phẩm chất lượng cao và mang lại giá trị thực tế cho người dùng.
+        </p>
+
+    </div>
+
+</section>
+
+<section id="skills">
+
+    <h2>Kỹ năng chuyên môn</h2>
+
+    <div class="skills-grid">
+
+        <div class="skill-card">Java</div>
+        <div class="skill-card">C++</div>
+        <div class="skill-card">C#</div>
+        <div class="skill-card">Android Studio</div>
+        <div class="skill-card">HTML5</div>
+        <div class="skill-card">CSS3</div>
+        <div class="skill-card">JavaScript</div>
+        <div class="skill-card">MySQL</div>
+        <div class="skill-card">SQL Server</div>
+        <div class="skill-card">Networking</div>
+        <div class="skill-card">Cisco Packet Tracer</div>
+        <div class="skill-card">Git & GitHub</div>
+
+    </div>
+
+</section>
+
+<section id="projects">
+
+    <h2>Dự án nổi bật</h2>
+
+    <div class="projects-grid">
+
+        <div class="project-card">
+
+            <i class="fa-solid fa-car"></i>
+
+            <h3>Car Rental Management System</h3>
+
+            <p>
+                Hệ thống quản lý cho thuê xe bằng Java và MySQL.
+                Quản lý khách hàng, xe, hợp đồng thuê và thống kê doanh thu.
+            </p>
+
+        </div>
+
+        <div class="project-card">
+
+            <i class="fa-solid fa-users"></i>
+
+            <h3>Student Management System</h3>
+
+            <p>
+                Quản lý lớp học, sinh viên, điểm số
+                bằng Java và SQL Server.
+            </p>
+
+        </div>
+
+        <div class="project-card">
+
+            <i class="fa-brands fa-android"></i>
+
+            <h3>Android Study Planner</h3>
+
+            <p>
+                Ứng dụng Android hỗ trợ lập kế hoạch học tập,
+                quản lý nhiệm vụ và nhắc nhở.
+            </p>
+
+        </div>
+
+        <div class="project-card">
+
+            <i class="fa-solid fa-network-wired"></i>
+
+            <h3>Smart Campus Network</h3>
+
+            <p>
+                Thiết kế hệ thống mạng VLAN,
+                DHCP và Routing bằng Cisco Packet Tracer.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="education">
+
+    <h2>Học vấn</h2>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+
+            <h3>Troy University</h3>
+
+            <span>2024 - Hiện tại</span>
+
+            <p>
+                Bachelor of Computer Science
+            </p>
+
+            <p>
+                GPA: 3.6
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="contact">
+
+    <h2>Liên hệ</h2>
+
+    <div class="contact-card">
+
+        <p>
+            <i class="fa-solid fa-envelope"></i>
+            vanduy.311005@gmail.com
+        </p>
+
+        <p>
+            <i class="fa-solid fa-phone"></i>
+            0966013018
+        </p>
+
+        <p>
+            <i class="fa-solid fa-location-dot"></i>
+            Thanh Khê, Đà Nẵng
+        </p>
+
+        <div class="social-links">
+
+            <a href="https://github.com/yanzi10" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/yanzi10" target="_blank">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+
+            <a href="https://instagram.com/vendi_1010" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <p>
+        © 2026 Nguyễn Văn Duy | Software Developer
+    </p>
+
+</footer>
+
+<script src="js/script.js"></script>
+```
+
 </body>
+
 </html>
