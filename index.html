@@ -4,17 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yanzi Portfolio</title>
-    
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Animate.css cho hiệu ứng Button mượt mà -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    
-    <!-- AOS CSS cho hiệu ứng khi cuộn trang -->
+    <!-- Thêm thư viện hiệu ứng cuộn AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
@@ -40,17 +33,14 @@
         body {
             background-color: #f9f9f9;
             color: var(--dark-color);
-            overflow-x: hidden;
         }
 
-        /* Khối hiển thị chính (Hero Section) */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 80px 20px;
-            background: radial-gradient(circle at top right, rgba(162, 155, 254, 0.2), transparent);
         }
 
         .container {
@@ -69,51 +59,11 @@
             }
         }
 
-        /* Xử lý ẢNH CHUYỂN ĐỘNG mượt mà */
-        .image-wrapper {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .profile-img {
-            width: 320px;
-            height: 320px;
-            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Tạo hình dáng lồi lõm nghệ thuật */
-            object-fit: cover;
-            box-shadow: 0 20px 40px rgba(108, 92, 231, 0.3);
-            border: 6px solid #fff;
-            /* Hiệu ứng chuyển động hình dáng (Blobby) và lơ lửng */
-            animation: blobMorph 8s ease-in-out infinite, floatImage 4s ease-in-out infinite;
-            transition: all 0.5s ease;
-        }
-
-        .profile-img:hover {
-            transform: scale(1.05) rotate(3deg);
-            border-color: var(--primary-color);
-        }
-
-        /* Định nghĩa hiệu ứng biến đổi hình dáng cho ảnh */
-        @keyframes blobMorph {
-            0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-            50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
-            100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-        }
-
-        /* Định nghĩa hiệu ứng lơ lửng mềm mại cho ảnh */
-        @keyframes floatImage {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
-
-        /* Nội dung văn bản */
         .content h1 {
             font-size: 3.5rem;
             font-weight: 700;
             line-height: 1.2;
             margin-bottom: 20px;
-            color: var(--dark-color);
         }
 
         .content h1 span {
@@ -129,7 +79,6 @@
             line-height: 1.7;
         }
 
-        /* Nút bấm kèm ANIMATION mượt mà */
         .btn-group {
             display: flex;
             gap: 20px;
@@ -141,6 +90,7 @@
             }
         }
 
+        /* 1. SỬA BUTTON ANIMATION MƯỢT MÀ HƠN */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -150,11 +100,9 @@
             font-weight: 600;
             text-decoration: none;
             border-radius: 50px;
+            /* Thay đổi transition dùng cubic-bezier giúp nút nảy (bounce) nhẹ nhàng cực mượt */
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
         }
 
         .btn-primary {
@@ -164,7 +112,7 @@
         }
 
         .btn-primary:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px); /* Nhấc nhẹ nút lên */
             box-shadow: 0 15px 25px rgba(108, 92, 231, 0.4);
         }
 
@@ -177,164 +125,69 @@
         .btn-secondary:hover {
             background: var(--primary-color);
             color: #fff;
-            transform: translateY(-5px);
-            box-shadow: 0 15px 25px rgba(108, 92, 231, 0.1);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 25px rgba(108, 92, 231, 0.15);
         }
 
-        /* Hiệu ứng gợn sóng nhẹ khi phản hồi hover chuột của Nút */
-        .btn::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255, 255, 255, 0.2);
+        .image-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        /* 2. SỬA ẢNH THÀNH CHUYỂN ĐỘNG LƠ LỬNG & BIẾN ĐỔI (BLOB) */
+        .profile-img {
+            width: 320px;
+            height: 320px;
             border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-            z-index: -1;
+            object-fit: cover;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            
+            /* Thêm animation: float (lơ lửng) và morph (co giãn góc bo) chạy song song */
+            animation: float 4s ease-in-out infinite, morph 8s ease-in-out infinite;
         }
 
-        .btn:hover::after {
-            width: 300px;
-            height: 300px;
+        /* Hiệu ứng lơ lửng lên xuống */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
         }
 
-        /* Khối nội dung mẫu bổ sung để kiểm tra tính năng Scroll (Cuộn) */
-        .features-section {
-            padding: 100px 20px;
-            background-color: #fff;
-            text-align: center;
-        }
-
-        .features-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .features-section h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 4px;
-            background: var(--gradient);
-            border-radius: 2px;
-        }
-
-        .grid-cards {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: #f9f9f9;
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.03);
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(108, 92, 231, 0.1);
-            border-color: rgba(108, 92, 231, 0.2);
-        }
-
-        .card i {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-
-        .card h3 {
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-        }
-
-        .card p {
-            color: #777;
-            font-size: 0.95rem;
-            line-height: 1.6;
+        /* Hiệu ứng chuyển động hình dáng mềm mại xung quanh viền ảnh */
+        @keyframes morph {
+            0%, 100% { border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%; }
+            50% { border-radius: 70% 30% 52% 48% / 60% 40% 60% 40%; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             
-            <!-- Cột chữ (Sử dụng hiệu ứng cuộn Fade Right của AOS) -->
-            <div class="content" data-aos="fade-right" data-aos-duration="1200">
-                <h1>Xin chào, Tôi là <br><span>Nguyễn Văn Duy</span></h1>
-                <p>Tôi là một nhà phát triển phần mềm đam mê tạo ra các trải nghiệm giao diện người dùng mượt mà, sống động và tối ưu cao. Chào mừng bạn đến với không gian sáng tạo của tôi!</p>
-                
+            <!-- 3. THÊM HIỆU ỨNG CUỘN (AOS) CHO NỘI DUNG CHỮ -->
+            <div class="content" data-aos="fade-right" data-aos-duration="1000">
+                <h1>Xin chào, Tôi là <br><span>Yanzi</span></h1>
+                <p>Tôi là một nhà phát triển phần mềm đam mê tạo ra các trải nghiệm giao diện người dùng mượt mà và tối ưu.</p>
                 <div class="btn-group">
-                    <!-- Nút có hiệu ứng animate.css khi tải và hiệu ứng hover tùy chỉnh -->
-                    <a href="#contact" class="btn btn-primary animate__animated animate__pulse animate__infinite infinite">
-                        <i class="fa-solid fa-paper-plane"></i> Liên Hệ Ngay
-                    </a>
-                    <a href="#portfolio" class="btn btn-secondary">
-                        <i class="fa-solid fa-briefcase"></i> Xem Dự Án
-                    </a>
+                    <a href="#" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Liên Hệ</a>
+                    <a href="#" class="btn btn-secondary"><i class="fa-solid fa-briefcase"></i> Dự Án</a>
                 </div>
             </div>
 
-            <!-- Cột Ảnh Chuyển Động (Sử dụng hiệu ứng cuộn Fade Left của AOS) -->
-            <div class="image-wrapper" data-aos="fade-left" data-aos-duration="1200">
-                <!-- Đường dẫn ảnh trỏ đến file profile.jpg có sẵn trong assets của bạn -->
-                <img src="assets/profile.jpg" alt="Yanzi Profile" class="profile-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80'">
+            <!-- 3. THÊM HIỆU ỨNG CUỘN (AOS) CHO KHỐI ẢNH -->
+            <div class="image-wrapper" data-aos="fade-left" data-aos-duration="1000">
+                <img src="assets/profile.jpg" alt="Yanzi Profile" class="profile-img">
             </div>
 
         </div>
     </section>
 
-    <!-- Khối các tính năng để thấy rõ hiệu ứng khi Scroll mạng mẽ -->
-    <section class="features-section" id="portfolio">
-        <h2 data-aos="fade-up" data-aos-duration="1000">Dịch Vụ Của Tôi</h2>
-        
-        <div class="grid-cards">
-            <!-- Thẻ 1 cuộn lên chân thực -->
-            <div class="card" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-                <i class="fa-solid fa-code"></i>
-                <h3>Phát Triển Web</h3>
-                <p>Xây dựng các hệ thống website chuẩn SEO, tương thích mọi thiết bị di động với hiệu năng mượt mà.</p>
-            </div>
-
-            <!-- Thẻ 2 cuộn lên trễ hơn chút tạo nhịp điệu sóng -->
-            <div class="card" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
-                <i class="fa-solid fa-wand-magic-sparkles"></i>
-                <h3>Thiết Kế UI/UX</h3>
-                <p>Tối ưu hóa hành vi người dùng bằng những thiết kế trực quan, hiện đại và mang tính thẩm mỹ cao.</p>
-            </div>
-
-            <!-- Thẻ 3 -->
-            <div class="card" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
-                <i class="fa-solid fa-rocket"></i>
-                <h3>Tối Ưu Tốc Độ</h3>
-                <p>Đảm bảo ứng dụng của bạn tải ngay lập tức nhờ tối ưu hóa mã nguồn và cấu trúc dữ liệu nén tốt.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Thư viện hỗ trợ JS của AOS để thực thi hoạt họa cuộn -->
+    <!-- Thư viện JS của AOS để kích hoạt hiệu ứng cuộn -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Khởi tạo hiệu ứng cuộn AOS
+        // Khởi tạo AOS
         AOS.init({
-            duration: 800, // Thời gian chạy hiệu ứng (ms)
-            once: false,   // Đặt là false để khi cuộn ngược lên hiệu ứng lại chạy lại cho đẹp mắt
-            mirror: true   // Tạo cảm giác mượt mà khi cuộn qua lại các phần tử
+            once: false // Đặt thành false để khi cuộn lên cuộn xuống hiệu ứng đều hoạt động mượt mà
         });
     </script>
 </body>
