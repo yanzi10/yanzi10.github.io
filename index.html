@@ -89,34 +89,15 @@
 
     </div>
 
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <div class="hero-image">
 
-    <style>
+        <div class="profile-card">
 
-        /* 2. SỬA ẢNH THÀNH CHUYỂN ĐỘNG LƠ LỬNG & BIẾN ĐỔI (BLOB) */
-        .profile-img {
-            width: 320px;
-            height: 320px;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            
-            /* Thêm animation: float (lơ lửng) và morph (co giãn góc bo) chạy song song */
-            animation: float 4s ease-in-out infinite, morph 8s ease-in-out infinite;
-        }
+            <img src="assets/profile.jpg" alt="Nguyen Van Duy">
 
-        /* Hiệu ứng lơ lửng lên xuống */
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-12px); }
-        }
+        </div>
 
-        /* Hiệu ứng chuyển động hình dáng mềm mại xung quanh viền ảnh */
-        @keyframes morph {
-            0%, 100% { border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%; }
-            50% { border-radius: 70% 30% 52% 48% / 60% 40% 60% 40%; }
-        }
-    </style>
+    </div>
 
 </section>
 
