@@ -9,294 +9,304 @@
 ```
 <title>Nguyễn Văn Duy | Software Developer</title>
 
+<meta name="description"
+    content="Portfolio của Nguyễn Văn Duy - Software Developer & Computer Science Student">
+
 <link rel="stylesheet" href="css/style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 ```
 
 </head>
 
 <body>
 
-<div class="background-blur blur-1"></div>
-<div class="background-blur blur-2"></div>
+```
+<div id="particles"></div>
 
 <header>
 
-```
-<nav class="navbar">
+    <nav class="navbar">
 
-    <div class="logo">
-        Văn Duy
-    </div>
+        <div class="logo">
+            Nguyễn Văn Duy
+        </div>
 
-    <ul class="nav-links">
-        <li><a href="#about">Giới thiệu</a></li>
-        <li><a href="#skills">Kỹ năng</a></li>
-        <li><a href="#projects">Dự án</a></li>
-        <li><a href="#education">Học vấn</a></li>
-        <li><a href="#contact">Liên hệ</a></li>
-    </ul>
+        <ul class="nav-links">
+            <li><a href="#about">Giới thiệu</a></li>
+            <li><a href="#skills">Kỹ năng</a></li>
+            <li><a href="#projects">Dự án</a></li>
+            <li><a href="#education">Học vấn</a></li>
+            <li><a href="#contact">Liên hệ</a></li>
+        </ul>
 
-</nav>
-```
+    </nav>
 
 </header>
 
 <section class="hero">
 
-```
-<div class="hero-content">
+    <div class="hero-content">
 
-    <span class="tag">
-        Software Developer
-    </span>
+        <span class="hero-tag">
+            Available for Internship
+        </span>
 
-    <h1>
-        Nguyễn Văn Duy
-    </h1>
+        <h1>
+            Nguyễn Văn Duy
+        </h1>
 
-    <h2>
-        Software Developer & Computer Science Student
-    </h2>
-    <div class="hero-badges">
+        <h2 id="typing-text">
+            Software Developer
+        </h2>
 
-    <span>Java</span>
-    <span>Android</span>
-    <span>MySQL</span>
-    <span>Networking</span>
+        <p>
+            Sinh viên ngành Computer Science tại Troy University.
+            Đam mê phát triển phần mềm, Android Development,
+            Database Systems và Networking Solutions.
+        </p>
 
-</div>
+        <div class="hero-badges">
+            <span>Java</span>
+            <span>C#</span>
+            <span>Android</span>
+            <span>MySQL</span>
+            <span>Networking</span>
+        </div>
 
-    <p>
+        <div class="hero-buttons">
 
-        Sinh viên ngành Khoa học Máy tính tại Troy University.
+            <a href="#projects" class="btn-primary">
+                Xem dự án
+            </a>
 
-        Đam mê phát triển phần mềm, xây dựng ứng dụng Android,
-        thiết kế cơ sở dữ liệu và triển khai các hệ thống mạng hiện đại.
+            <a href="#contact" class="btn-secondary">
+                Liên hệ
+            </a>
 
-    </p>
-
-    <div class="hero-buttons">
-
-        <a href="#projects" class="btn-primary">
-            Xem dự án
-        </a>
-
-        <a href="#contact" class="btn-secondary">
-            Liên hệ
-        </a>
+        </div>
 
     </div>
 
-</div>
+    <div class="hero-image">
 
-<div class="hero-image">
+        <div class="profile-card">
 
-    <div class="profile-card">
+            <img src="assets/profile.jpg" alt="Nguyen Van Duy">
 
-        <img src="assets/profile.jpg" alt="Nguyen Van Duy">
+        </div>
 
     </div>
-
-</div>
-```
 
 </section>
 
 <section class="stats">
 
-```
-<div class="stat-card">
-    <h3>3.6</h3>
-    <p>GPA hiện tại</p>
-</div>
+    <div class="stat-card">
+        <h3 class="counter" data-target="36">0</h3>
+        <p>GPA x10</p>
+    </div>
 
-<div class="stat-card">
-    <h3>4+</h3>
-    <p>Dự án nổi bật</p>
-</div>
+    <div class="stat-card">
+        <h3 class="counter" data-target="4">0</h3>
+        <p>Dự án nổi bật</p>
+    </div>
 
-<div class="stat-card">
-    <h3>10+</h3>
-    <p>Công nghệ sử dụng</p>
-</div>
-```
+    <div class="stat-card">
+        <h3 class="counter" data-target="10">0</h3>
+        <p>Công nghệ</p>
+    </div>
 
 </section>
 
 <section id="about">
 
-```
-<h2>Giới thiệu bản thân</h2>
+    <h2>Giới thiệu</h2>
 
-<p>
+    <div class="glass-card">
 
-    Tôi là Nguyễn Văn Duy, hiện đang theo học ngành Computer Science
-    tại Troy University.
+        <p>
+            Tôi là Nguyễn Văn Duy, sinh viên ngành Computer Science tại Troy University.
 
-    Tôi yêu thích lập trình, phát triển ứng dụng thực tế,
-    cơ sở dữ liệu và các giải pháp mạng.
+            Tôi yêu thích xây dựng các hệ thống phần mềm thực tế,
+            phát triển ứng dụng Android, thiết kế cơ sở dữ liệu
+            và triển khai các giải pháp mạng hiện đại.
 
-    Mục tiêu của tôi là trở thành Software Developer chuyên nghiệp
-    và tham gia xây dựng các sản phẩm mang lại giá trị cho người dùng.
+            Mục tiêu của tôi là trở thành Software Developer chuyên nghiệp,
+            tham gia phát triển các sản phẩm chất lượng cao và mang lại giá trị thực tế cho người dùng.
+        </p>
 
-</p>
-```
+    </div>
 
 </section>
 
 <section id="skills">
 
-```
-<h2>Kỹ năng</h2>
+    <h2>Kỹ năng chuyên môn</h2>
 
-<div class="skills-grid">
+    <div class="skills-grid">
 
-    <div class="skill-card">Java</div>
-    <div class="skill-card">C++</div>
-    <div class="skill-card">C#</div>
-    <div class="skill-card">Android</div>
-    <div class="skill-card">JavaScript</div>
-    <div class="skill-card">HTML/CSS</div>
-    <div class="skill-card">MySQL</div>
-    <div class="skill-card">SQL Server</div>
-    <div class="skill-card">Networking</div>
-    <div class="skill-card">Cisco Packet Tracer</div>
+        <div class="skill-card">Java</div>
+        <div class="skill-card">C++</div>
+        <div class="skill-card">C#</div>
+        <div class="skill-card">Android Studio</div>
+        <div class="skill-card">HTML5</div>
+        <div class="skill-card">CSS3</div>
+        <div class="skill-card">JavaScript</div>
+        <div class="skill-card">MySQL</div>
+        <div class="skill-card">SQL Server</div>
+        <div class="skill-card">Networking</div>
+        <div class="skill-card">Cisco Packet Tracer</div>
+        <div class="skill-card">Git & GitHub</div>
 
-</div>
-```
+    </div>
 
 </section>
 
 <section id="projects">
 
-```
-<h2>Dự án nổi bật</h2>
+    <h2>Dự án nổi bật</h2>
 
-<div class="projects-grid">
+    <div class="projects-grid">
 
-    <div class="project-card">
+        <div class="project-card">
 
-        <h3>Car Rental Management System</h3>
+            <i class="fa-solid fa-car"></i>
 
-        <p>
-            Hệ thống quản lý cho thuê xe sử dụng Java và MySQL.
-        </p>
+            <h3>Car Rental Management System</h3>
+
+            <p>
+                Hệ thống quản lý cho thuê xe bằng Java và MySQL.
+                Quản lý khách hàng, xe, hợp đồng thuê và thống kê doanh thu.
+            </p>
+
+        </div>
+
+        <div class="project-card">
+
+            <i class="fa-solid fa-users"></i>
+
+            <h3>Student Management System</h3>
+
+            <p>
+                Quản lý lớp học, sinh viên, điểm số
+                bằng Java và SQL Server.
+            </p>
+
+        </div>
+
+        <div class="project-card">
+
+            <i class="fa-brands fa-android"></i>
+
+            <h3>Android Study Planner</h3>
+
+            <p>
+                Ứng dụng Android hỗ trợ lập kế hoạch học tập,
+                quản lý nhiệm vụ và nhắc nhở.
+            </p>
+
+        </div>
+
+        <div class="project-card">
+
+            <i class="fa-solid fa-network-wired"></i>
+
+            <h3>Smart Campus Network</h3>
+
+            <p>
+                Thiết kế hệ thống mạng VLAN,
+                DHCP và Routing bằng Cisco Packet Tracer.
+            </p>
+
+        </div>
 
     </div>
-
-    <div class="project-card">
-
-        <h3>Student Management System</h3>
-
-        <p>
-            Quản lý lớp học và sinh viên bằng Java và SQL Server.
-        </p>
-
-    </div>
-
-    <div class="project-card">
-
-        <h3>Android Study Planner</h3>
-
-        <p>
-            Ứng dụng Android hỗ trợ quản lý học tập.
-        </p>
-
-    </div>
-
-    <div class="project-card">
-
-        <h3>Smart Campus Network</h3>
-
-        <p>
-            Thiết kế hệ thống mạng VLAN bằng Cisco Packet Tracer.
-        </p>
-
-    </div>
-
-</div>
-```
 
 </section>
 
 <section id="education">
 
-```
-<h2>Học vấn</h2>
+    <h2>Học vấn</h2>
 
-<div class="education-card">
+    <div class="timeline">
 
-    <h3>Troy University</h3>
+        <div class="timeline-item">
 
-    <p>
-        Bachelor of Computer Science
-    </p>
+            <h3>Troy University</h3>
 
-    <p>
-        2024 - Hiện tại
-    </p>
+            <span>2024 - Hiện tại</span>
 
-    <p>
-        GPA: 3.6
-    </p>
+            <p>
+                Bachelor of Computer Science
+            </p>
 
-</div>
-```
+            <p>
+                GPA: 3.6
+            </p>
+
+        </div>
+
+    </div>
 
 </section>
 
 <section id="contact">
 
-```
-<h2>Liên hệ</h2>
+    <h2>Liên hệ</h2>
 
-<div class="contact-card">
+    <div class="contact-card">
 
-    <p>📧 vanduy.311005@gmail.com</p>
+        <p>
+            <i class="fa-solid fa-envelope"></i>
+            vanduy.311005@gmail.com
+        </p>
 
-    <p>📱 0966013018</p>
+        <p>
+            <i class="fa-solid fa-phone"></i>
+            0966013018
+        </p>
 
-    <p>📍 Thanh Khê, Đà Nẵng</p>
+        <p>
+            <i class="fa-solid fa-location-dot"></i>
+            Thanh Khê, Đà Nẵng
+        </p>
 
-   <p>
-💼 LinkedIn:
-<a href="https://www.linkedin.com/in/yanzi10" target="_blank">
-linkedin.com/in/yanzi10
-</a>
-</p>
+        <div class="social-links">
 
-<p>
-🐙 GitHub:
-<a href="https://github.com/yanzi10" target="_blank">
-github.com/yanzi10
-</a>
-</p>
+            <a href="https://github.com/yanzi10" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
 
-<p>
-📸 Instagram:
-<a href="https://instagram.com/vendi_1010" target="_blank">
-@vendi_1010
-</a>
-</p>
+            <a href="https://www.linkedin.com/in/yanzi10" target="_blank">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
 
-</div>
-```
+            <a href="https://instagram.com/vendi_1010" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+        </div>
+
+    </div>
 
 </section>
 
 <footer>
 
-```
-<p>
-    © 2026 Nguyễn Văn Duy | Software Developer
-</p>
-```
+    <p>
+        © 2026 Nguyễn Văn Duy | Software Developer
+    </p>
 
 </footer>
 
 <script src="js/script.js"></script>
+```
 
 </body>
+
 </html>
