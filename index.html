@@ -89,15 +89,23 @@
 
     </div>
 
-    <div class="hero-image">
-
-        <div class="profile-card">
-
-            <img src="assets/profile.jpg" alt="Nguyen Van Duy">
-
-        </div>
-
-    </div>
+    <img src="assets/profile.jpg" alt="Nguyen Van Duy" style="
+                border-radius: 20px;
+                box-shadow: 0 0 20px rgba(0, 149, 255, 0.6), 0 0 40px rgba(0, 149, 255, 0.3);
+                animation: pulseGlow 4s ease-in-out infinite alternate;
+            ">
+            <style>
+                @keyframes pulseGlow {
+                    0% {
+                        transform: scale(1);
+                        box-shadow: 0 0 15px rgba(0, 149, 255, 0.5), 0 0 30px rgba(0, 149, 255, 0.2);
+                    }
+                    100% {
+                        transform: scale(1.03);
+                        box-shadow: 0 0 25px rgba(0, 149, 255, 0.8), 0 0 50px rgba(0, 149, 255, 0.5);
+                    }
+                }
+            </style>
 
 </section>
 
